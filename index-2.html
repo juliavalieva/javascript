@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+.card {
+width: 20vw;
+height: 20vh;
+margin: 20px;
+padding: 7%;
+border: 1px solid;
+text-align: center;
+}
+
+.row {
+
+display:flex;
+flex-direction: row;
+justify-content: center;
+margin:auto;
+width: 100%;
+}
+
+.selected {
+background-color: rgb(122, 230, 212);
+}
+
+.form__headline {
+font-size: large;
+}
+
+.contact-form {
+    display: grid;
+    grid-column: 2/3;
+    grid-template-columns: 1fr 65%;
+    grid-template-rows: 1fr 20%;
+    gap: 4.5%;
+    justify-content: start;
+}
+
+.input-container {
+    display: grid;
+    grid-column: 1/2;
+    grid-row: 1/3;
+    grid-template-rows: repeat(4, 1fr) 15%;
+    gap: 3%;
+    font-size: 0.5em;
+    margin-top: 0;
+}
+
+
+.form__input {
+    border: none;
+    background: #F3F3F3;
+    box-sizing: border-box;
+    width: 200px;
+    text-indent: 4%;
+    font-size: 2vw;
+}
+
+.radio__input {
+    display: flex;
+    flex-direction: row;
+    text-indent: 4%;
+    font-size: 1.8vw;
+}
+
+.input2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.checkbox {
+    padding-top: 3%;
+    padding-left: 0;
+    text-align: start;
+    cursor: pointer;
+}
+
+.label {
+    margin-left: 0.5em;
+    margin-bottom: 0;
+}
+
+.button {
+    border: none;
+    background: #333333;
+    width: 40%;
+    height: 8vh;
+    color: #FFFFFF;
+    font-size: 0.875em;
+    margin-bottom: 40%;
+    margin-left:25%;
+}
+
+#errorMessage {
+color: red;
+}
+
+</style>
+</head>
+
+<body>
+<button type="submit" id="sibmit" onclick="ButtonClick();">Нажми меня</button>
+
+<form name="welcomeForm" action="#" method="POST">
+<label for="userName"><br>Введите Ваше имя:</label>
+<p><input type="text" name="userName" id="userName" placeholder="Имя" autofocus></p>
+<p><input type="button" name="send" value="Отправить" onclick="ClickMe();"></p>
+</form>
+
+
+<h2>Простой калькулятор</h2>
+
+<button type="submit" onclick="Button_1();">+</button>
+
+<button type="submit" onclick="Button_2();">-</button>
+
+<button type="submit" onclick="Button_3();">*</button>
+
+<button type="submit" onclick="Button_4();">/</button>
+
+<p>
+
+<button type="submit" id="sibmit" onclick="Clicktwo();">Нажми меня</button>
+
+</p>
+
+<div class="row">
+<div class="card" onclick="select(this)">Карточка №1</div>
+<div class="card" onclick="select(this)">Карточка №2</div>
+<div class="card" onclick="select(this)">Карточка №3</div>
+</div>
+
+
+
+<p>
+    <form name="calculator__Form" action="#" method="POST">
+    <input type="text" name="number1" id="number1" placeholder="Введите число">
+    <input type="text" name="number2" id="number2" placeholder="Введите число">   
+    <p>
+    <input type="button" value="+" onclick="plus();">
+    <input type="button" value="-" onclick="minus();">
+    <input type="button" value="x" onclick="multidiplication();">
+    <input type="button" value=":" onclick="divide();">
+    </p>
+    <hr>
+    <p id="result">Результат:</p>
+</form>
+</p>
+
+<h1 class="form__headline">Регистрация</h1>
+<form class="contact-form" action="#" name="Form" method="POST">
+<div class="input-container">
+<input class="form__input" id="InputName" type="text" name="name" placeholder="Ваше имя">
+<label for="InputGender">Ваш пол:</label>
+<div class="radio__input">
+<input type="radio" id="InputGender" name="gender" value="0"> Мужской &nbsp;
+<input type="radio" id="InputGender" name="gender" value="1"> Женский
+</div>
+<input class="form__input" id="InputTel" type="tel" required placeholder="Номер телефона">
+<input class="form__input" id="InputEmail"type="email" required placeholder="E-mail">
+<input class="form__input" id="InputPassword" type="password" placeholder="Придумайте пароль">
+<div class="checkbox">
+<div class="input2">
+<input type="checkbox" id="checkbox1" class="checkbox" name="terms"><label for="checkbox1" class="label">Отправляя заявку Вы соглашаетесь с политикой <br> конфиденциальности</label></div>
+</div>
+<div id="errorMessage"></div>
+<input type="button" class="button" value="ОТПРАВИТЬ" onclick="check();">
+</div>
+</form>
+
+
+<script src="index.js">
+</script>
+</body>
+
+</html>
