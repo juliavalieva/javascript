@@ -27,8 +27,6 @@ function Button_1 () {
     alert(a / b);
     }
 
-
-
 function select (sender) {
 sender.classList.add("selected");
 
